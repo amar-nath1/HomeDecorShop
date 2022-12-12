@@ -1,0 +1,12 @@
+
+.imgHover:hover{
+
+    transform: scale(1.2);
+    transition: all 1.3s ease;
+
+}
+
+.imgHover{
+
+    transition: all 1.3s ease;
+}
