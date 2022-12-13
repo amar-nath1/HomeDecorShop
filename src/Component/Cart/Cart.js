@@ -1,6 +1,6 @@
 
 import Card from './Card'
-import { Button, Image } from 'react-bootstrap'
+import { Button} from 'react-bootstrap'
 import classes from './Cart.module.css'
 import CartContext from '../../store/cart-context'
 import React, { useContext } from 'react'

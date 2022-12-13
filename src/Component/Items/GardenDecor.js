@@ -1,4 +1,4 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap"
+import { Card, Col, Container, Row } from "react-bootstrap"
 import AddToCartButton from "./AddToCartButton"
 import classes from './WallDecor.module.css'
 

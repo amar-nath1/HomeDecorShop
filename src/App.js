@@ -1,47 +1,28 @@
-import React from 'react';
-import NavBar from './Component/NavBar';
 
-import Items from './Component/Items/Items';
-import { Button } from 'react-bootstrap';
-import Footer from './Component/Footer/Footer';
+import { Route } from "react-router-dom"
+import About from "./Pages/About"
+import Welcome from "./Welcome"
+const App=()=>{
 
-import { useState } from 'react';
-import Cart from './Component/Cart/Cart';
-import CartProvider from './store/CartProvider';
+    return (
 
+        <div>
 
-function App() {
+<Route path='/' exact>
+            <Welcome></Welcome>
+        </Route>
 
-  const [showCart,setShowCart]=useState(false)
+        <Route path='/welcome'>
+            <Welcome></Welcome>
+        </Route>
+        <Route path='/about'>
+            <About></About>
+        </Route>
 
-  const goToCartHandler=()=>{
-    setShowCart(true)
+       
 
-  }
-
-
-  return (
-    <CartProvider>
-    <NavBar></NavBar>
-    <div className="d-flex flex-row justify-content-center border border-primary mt-2 bg-warning">
-  <h3 className="p-2">Take Me Home Decor</h3>
-  
-</div>
-
-{showCart && <Cart></Cart>}
-      
-        <Items></Items>
-        <div className='d-flex justify-content-center'>
-        <Button onClick={goToCartHandler} variant='success' size='lg' className='m-4'> Go to your Cart</Button>
         </div>
-
-        
-
-        <Footer></Footer>
-     
-      </CartProvider>
-      
-  );
+    )
 }
 
-export default App;
+export default App

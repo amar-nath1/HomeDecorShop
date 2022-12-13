@@ -14,11 +14,11 @@ const CartProvider=(props)=>{
 
             let exiItemIndx=prev.findIndex((item)=>{
 
-                return item.id==itemObj.id
+                return item.id===itemObj.id
             })
 
 
-            if (exiItemIndx == -1) {
+            if (exiItemIndx === -1) {
 
                 return [...prev, itemObj]
             }
