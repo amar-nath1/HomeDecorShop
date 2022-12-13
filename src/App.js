@@ -7,6 +7,7 @@ import Footer from './Component/Footer/Footer';
 
 import { useState } from 'react';
 import Cart from './Component/Cart/Cart';
+import CartProvider from './store/CartProvider';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
 
   return (
-    <>
+    <CartProvider>
     <NavBar></NavBar>
     <div className="d-flex flex-row justify-content-center border border-primary mt-2 bg-warning">
   <h3 className="p-2">Take Me Home Decor</h3>
@@ -38,7 +39,7 @@ function App() {
 
         <Footer></Footer>
      
-      </>
+      </CartProvider>
       
   );
 }

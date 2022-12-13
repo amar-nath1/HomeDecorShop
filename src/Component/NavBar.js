@@ -1,6 +1,7 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Cart from "./Cart/Cart"
+import CartContext from "../store/cart-context"
 
 const NavBar=()=>{
 
@@ -12,6 +13,12 @@ const NavBar=()=>{
         
     }
 
+    const currentItems=useContext(CartContext).items
+    let totalQuantity=0
+    currentItems.forEach((item)=>{
+
+        return totalQuantity+=Number(item.quantity)
+    })
 
     return (
 <>
@@ -23,7 +30,7 @@ const NavBar=()=>{
                 <Nav.Link className="m-2" href='#'>ABOUT</Nav.Link>
             </Container>
 
-            <Button variant="info" onClick={showCartHandler}>Cart </Button><span className="m-3">0</span>
+            <Button variant="info" onClick={showCartHandler}>Cart </Button><span className="m-3">{totalQuantity}</span>
             
         </Navbar>
         {showCart && <Cart handleShowCart={showCartHandler}></Cart>}

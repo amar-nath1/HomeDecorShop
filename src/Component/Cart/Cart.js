@@ -2,10 +2,14 @@
 import Card from './Card'
 import { Button, Image } from 'react-bootstrap'
 import classes from './Cart.module.css'
+import CartContext from '../../store/cart-context'
+import React, { useContext } from 'react'
 
 
 
 const Cart=(props)=>{
+
+  const cartElements=useContext(CartContext).items
 
   const closeHandler=()=>{
 
@@ -13,45 +17,7 @@ const Cart=(props)=>{
     console.log('close button clicked')
   }
 
-    const cartElements = [
-
-        {
-        
-        title: 'Colors',
-        
-        price: 100,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-        
-        quantity: 2
-        
-        },
-        
-        {
-        
-        title: 'Black and white Colors',
-        
-        price: 50,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-        
-        quantity: 3
-        
-        },
-        
-        {
-        
-        title: 'Yellow and Black Colors',
-        
-        price: 70,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-        
-        quantity: 1
-        
-        }
-        
-        ]
+    
 
         let totalAmount=0
           const cartItems=cartElements.map((item)=>{
@@ -59,7 +25,7 @@ const Cart=(props)=>{
 
             return (
 
-              <>
+              <React.Fragment key={item.id}>
 
             <div className={classes.content}>
 
@@ -71,7 +37,7 @@ const Cart=(props)=>{
                 
             </header>
             
-            </>
+            </React.Fragment>
 
             )
           })
