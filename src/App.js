@@ -5,7 +5,18 @@ import Items from './Component/Items/Items';
 import { Button } from 'react-bootstrap';
 import Footer from './Component/Footer/Footer';
 
+import { useState } from 'react';
+import Cart from './Component/Cart/Cart';
+
+
 function App() {
+
+  const [showCart,setShowCart]=useState(false)
+
+  const goToCartHandler=()=>{
+    setShowCart(true)
+
+  }
 
 
   return (
@@ -15,11 +26,15 @@ function App() {
   <h3 className="p-2">Take Me Home Decor</h3>
   
 </div>
+
+{showCart && <Cart></Cart>}
       
         <Items></Items>
         <div className='d-flex justify-content-center'>
-        <Button variant='success' size='lg' className='m-4'> Go to your Cart</Button>
+        <Button onClick={goToCartHandler} variant='success' size='lg' className='m-4'> Go to your Cart</Button>
         </div>
+
+        
 
         <Footer></Footer>
      
