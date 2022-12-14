@@ -1,16 +1,18 @@
 import { Button, ButtonGroup, Card } from "react-bootstrap"
 
+import classes from "../../Store.module.css"
 
 const Footer=()=>{
 
     return (
-        
-        <Card className="text-center">
+        <div className={classes.tmhHeader}>
+        <Card className="text-center fixed-bottom">
 
         
         
         <Card.Footer className="text-muted d-flex justify-content-between">
-        <h3> Take Me Home Decor</h3>
+        <h5> Take Me Home Decor</h5>
+        <p>@tmh- All Rights Reserved</p>
         <ButtonGroup aria-label="Basic example" className='d-flex justify-content-end'>
       <Button variant="secondary">FaceBook</Button>
       <Button variant="secondary">Youtube</Button>
@@ -21,6 +23,7 @@ const Footer=()=>{
         </Card.Footer>
         
         </Card>
+        </div>
         
     )
 }

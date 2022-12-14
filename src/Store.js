@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './Component/NavBar';
+import NavBar from './Component/NavBar/NavBar';
 
 import Items from './Component/Items/Items';
 import { Button } from 'react-bootstrap';
@@ -9,8 +9,11 @@ import { useState } from 'react';
 import Cart from './Component/Cart/Cart';
 import CartProvider from './store/CartProvider';
 
+import classes from './Store.module.css'
 
-function Welcome() {
+
+
+function Store() {
 
   const [showCart,setShowCart]=useState(false)
 
@@ -24,9 +27,11 @@ function Welcome() {
   return (
     <CartProvider>
     <NavBar></NavBar>
-    <div className="d-flex flex-row justify-content-center border border-primary mt-2 bg-warning">
-  <h3 className="p-2">Take Me Home Decor</h3>
+    <div className={classes.tmhHeader}>
+    <div className="d-flex flex-row justify-content-center border border-primary mt-4 bg-warning">
+  <h3 className='p-2'>Take Me Home Decor</h3>
   
+</div>
 </div>
 
 {showCart && <Cart handleShowCart={showCartHandler}></Cart>}
@@ -45,4 +50,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Store;
