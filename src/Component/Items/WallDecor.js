@@ -45,7 +45,7 @@ const WallDecor=()=>{
     const showWDitems=wallDecorItems.map((item)=>{
         return (
 
-            <Col>
+            <Col key={item.id}>
                 <Card style={{width:'18rem'}}>
                     <Card.Header className="text-center">{item.title}</Card.Header>
                     <Card.Img className={classes.imgHover} variant="top" src={item.imageUrl} height='350rem'/>

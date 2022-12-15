@@ -1,8 +1,8 @@
-import { Navbar,Container,Button } from "react-bootstrap"
+import {Container} from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 
 
-const NavLinks=(props)=>{
+const NavLinks=()=>{
 
     return (
 
@@ -12,6 +12,7 @@ const NavLinks=(props)=>{
                 <NavLink className="m-2 text-white text-decoration-none" to='/'><h5>HOME</h5></NavLink>
                 <NavLink className="m-2 text-white text-decoration-none" to='/store'><h5>STORE</h5></NavLink>
                 <NavLink className="m-2 text-white text-decoration-none" to='/about'><h5>ABOUT</h5></NavLink>
+                <NavLink className="m-2 text-white text-decoration-none" to='/contact'><h5>CONTACT US</h5></NavLink>
             </Container>
 
     )

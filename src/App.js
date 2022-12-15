@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import About from "./Pages/About"
 import HomePage from "./Pages/HomePage"
 import Store from "./Store"
+import Contact from "./Pages/ContactUs"
 
 const App=()=>{
 
@@ -20,7 +21,9 @@ const App=()=>{
         <Route path='/about'>
             <About></About>
         </Route>
-
+        <Route path='/contact'>
+            <Contact></Contact>
+        </Route>
        
 
         </div>
