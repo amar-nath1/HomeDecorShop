@@ -1,0 +1,7 @@
+.header a:hover,
+.header a:active,
+.header a.active{
+    color: azure;
+    
+    border-bottom: 4px solid azure;
+}

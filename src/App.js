@@ -1,9 +1,10 @@
 
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import About from "./Pages/About"
 import HomePage from "./Pages/HomePage"
 import Store from "./Store"
 import Contact from "./Pages/ContactUs"
+import ProductDetail from "./Pages/ProductDetail"
 
 const App=()=>{
 
@@ -11,11 +12,17 @@ const App=()=>{
 
         <div>
 
-<Route path='/' exact>
+            <Switch>
+
+            <Route path='/' exact>
             <HomePage></HomePage>
         </Route>
 
-        <Route path='/store'>
+<Route path='/welcome'>
+            <HomePage></HomePage>
+        </Route>
+
+        <Route path='/store' exact>
             <Store></Store>
         </Route>
         <Route path='/about'>
@@ -24,6 +31,11 @@ const App=()=>{
         <Route path='/contact'>
             <Contact></Contact>
         </Route>
+        <Route path='/productDetails/:prodId'> 
+        <ProductDetail></ProductDetail>
+        </Route>
+
+        </Switch>
        
 
         </div>

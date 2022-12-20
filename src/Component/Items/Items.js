@@ -7,8 +7,9 @@ const Items=()=>{
 
     return (
         <>
-        <WallDecor></WallDecor>
         <GardenDecor></GardenDecor>
+        <WallDecor></WallDecor>
+        
         </>
     )
 }

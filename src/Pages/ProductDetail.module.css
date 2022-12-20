@@ -1,0 +1,16 @@
+
+.imgHover:hover{
+
+    transform: scale(1.3);
+    transition: all 1s ;
+
+}
+
+.imgHover{
+
+    transition: all 1.3s;
+}
+
+.imgs{
+    cursor:pointer;
+}

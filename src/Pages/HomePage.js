@@ -19,7 +19,7 @@ const HomePage=()=>{
 
                 <Col> 
 
-                <Card body className='text-center mb-2' bg='light'> <h3>Welcome to Take Me Home Decor Shop</h3></Card>
+                <Card body className='text-center mb-2' bg='warning'> <h3>Welcome to Take Me Home Decor Shop</h3></Card>
                
                 </Col>
                 
@@ -30,7 +30,7 @@ const HomePage=()=>{
             <Row>
 
             <Col> <Card style={{width:'18rem'}}>
-                <Card.Header>USP 1</Card.Header>
+                <Card.Header className='bg-danger text-white'>USP 1</Card.Header>
                 <Card.Body>
                     <Card.Title>100% Handmade</Card.Title>
                     <Card.Text>Each Items are made by our own artisans. Items are 100 % handmade. </Card.Text>
@@ -41,10 +41,10 @@ const HomePage=()=>{
                </Col>
 
                <Col> <Card style={{width:'18rem'}}>
-                <Card.Header>USP 2</Card.Header>
+                <Card.Header className='bg-success text-white'>USP 2</Card.Header>
                 <Card.Body>
-                    <Card.Title>100% Handmade</Card.Title>
-                    <Card.Text>Each Items are made by our own artisans. Items are 100 % handmade. </Card.Text>
+                    <Card.Title>Safe Delivery</Card.Title>
+                    <Card.Text>We make sure that the item is delivered safely </Card.Text>
                 </Card.Body>
             </Card>
             
@@ -52,10 +52,10 @@ const HomePage=()=>{
                </Col>
 
                <Col> <Card style={{width:'18rem'}}>
-                <Card.Header>USP 3</Card.Header>
+                <Card.Header className='bg-primary text-white'>USP 3</Card.Header>
                 <Card.Body>
-                    <Card.Title>100% Handmade</Card.Title>
-                    <Card.Text>Each Items are made by our own artisans. Items are 100 % handmade. </Card.Text>
+                    <Card.Title>Quality Assurance</Card.Title>
+                    <Card.Text>Supreme Quality of each item is our utmost priority </Card.Text>
                 </Card.Body>
             </Card>
             
