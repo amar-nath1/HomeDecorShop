@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage"
 import Store from "./Store"
 import Contact from "./Pages/ContactUs"
 import ProductDetail from "./Pages/ProductDetail"
+import LoginPage from "./Pages/LoginPage"
 
 const App=()=>{
 
@@ -33,6 +34,10 @@ const App=()=>{
         </Route>
         <Route path='/productDetails/:prodId'> 
         <ProductDetail></ProductDetail>
+        </Route>
+
+        <Route path='/auth'> 
+        <LoginPage></LoginPage>
         </Route>
 
         </Switch>

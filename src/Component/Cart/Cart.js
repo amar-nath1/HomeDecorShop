@@ -29,7 +29,7 @@ const Cart=(props)=>{
 
             <div className={classes.content}>
 
-            <img src={item.imageUrl} className={classes.img}/>
+            <img src={item.imageUrl.img1} className={classes.img}/>
               
              <div> <p>{item.title}</p><Button className='btn btn-secondary btn-sm'>Delete</Button></div></div>
             <header className={classes.header}>
@@ -52,7 +52,7 @@ const Cart=(props)=>{
       {cartItems}
       <div className={classes.totalAmt}><h3>Total Amount</h3><h3> Rs. {totalAmount.toFixed(2)}</h3></div>
 
-          <footer className={classes.actions}><Button onClick={closeHandler}>Close</Button><Button>Order</Button></footer>
+          <footer className={classes.actions}><Button className='m-2' onClick={closeHandler}>Close</Button><Button className='m-2'>Order</Button></footer>
       </Card>
      
 

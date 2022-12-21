@@ -24,6 +24,9 @@ const HomePage=()=>{
                 </Col>
                 
             </Row>
+            <Card>
+                <Card.Img src='https://cdn.shopify.com/s/files/1/0648/6661/5512/files/Picture1_35bc787e-5fa9-47d6-b8aa-c06292c3557d_1400x.jpg?v=1664521448'></Card.Img>
+            </Card>
 
             <span className="text-center"><h3 className="m-3 mb-4">Features</h3></span>
 

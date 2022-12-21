@@ -1,22 +1,30 @@
 
 import { useState } from "react"
 
-import authContext from "./auth-context"
-const AuthProvider=()=>{
+import AuthContext from "./auth-context"
+const AuthProvider=(props)=>{
+    const initToken=localStorage.getItem('token')
+    const [token,setToken]=useState(initToken)
 
-    const [isAuthorized,setIsAuthorized]=useState(false)
+    const userIsLoggedIn=!!token
 
-    const authHandle=(auth)=>{
-        setIsAuthorized(auth)
+    const loginHandle=(token)=>{
+        setToken(token)
+    }
+
+    const logoutHandle=()=>{
+        setToken(null)
     }
 
     const authCtxValues={
-        authorized:isAuthorized,
-        authHandle:authHandle
+        token:token,
+        isLoggedIn:userIsLoggedIn,
+        loginHandle:loginHandle,
+        logoutHandle:logoutHandle
     }
 
     return(
-        <authContext.Provider value={authCtxValues}>{props.children}</authContext.Provider>
+        <AuthContext.Provider value={authCtxValues}>{props.children}</AuthContext.Provider>
     )
 }
 
