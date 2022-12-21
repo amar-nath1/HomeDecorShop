@@ -1,13 +1,16 @@
 
-import { Route, Switch } from "react-router-dom"
+import { Redirect, Route, Switch } from "react-router-dom"
 import About from "./Pages/About"
 import HomePage from "./Pages/HomePage"
 import Store from "./Store"
 import Contact from "./Pages/ContactUs"
 import ProductDetail from "./Pages/ProductDetail"
 import LoginPage from "./Pages/LoginPage"
+import AuthContext from "./store/auth-context"
+import { useContext } from "react"
 
 const App=()=>{
+    const authCtx=useContext(AuthContext)
 
     return (
 
@@ -33,7 +36,9 @@ const App=()=>{
             <Contact></Contact>
         </Route>
         <Route path='/productDetails/:prodId'> 
-        <ProductDetail></ProductDetail>
+        {authCtx.isLoggedIn && <ProductDetail></ProductDetail>}
+        {!authCtx.isLoggedIn && <Redirect to='/auth'></Redirect>}
+        
         </Route>
 
         <Route path='/auth'> 
