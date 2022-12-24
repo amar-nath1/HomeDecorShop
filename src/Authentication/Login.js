@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useContext, useRef, useState } from 'react';
 import { Navbar, Spinner } from 'react-bootstrap';
 import { Redirect, useHistory } from 'react-router-dom';
@@ -62,9 +63,21 @@ const history=useHistory()
           console.log('Login Successful')
           res.json().then((jwt)=>{
             
-            authCtx.loginHandle(jwt.idToken)
-            localStorage.setItem('token',jwt.idToken)
+            authCtx.loginHandle(jwt.idToken,jwt.email)
+            const userInfo={
+              tok:jwt.idToken,
+              email:jwt.email
+            }
+            
+            localStorage.setItem('token',JSON.stringify(userInfo))
+            let userEmail=jwt.email.replace(/\W/g, '')
+            axios.get(`https://crudcrud.com/api/651b072f0c3343d4a2a5d8760cd2c5b7/cart${userEmail}`)
+            .then((res)=>{
+
+              localStorage.setItem(jwt.email,JSON.stringify(res.data))
               history.replace('/store')
+            })
+              
             
             
           })

@@ -18,7 +18,7 @@ img1:'https://imgshopnewgumlet.lbb.in/catalog/product/w/m/wmdfco150_main_hd.jpg?
 img2: 'https://imgshopnewgumlet.lbb.in/catalog/product/w/m/wmdfco150_main_hd1.jpg?fm=webp&w=750&h=500&dpr=1',
 img3: 'https://imgshopnewgumlet.lbb.in/catalog/product/w/m/wmdfco150_main_wdim.jpg?fm=webp&w=750&h=500&dpr=1'},
 
-        quantity: 2,
+inStock: 6,
         reviews:'2/5'
         },
 
@@ -34,7 +34,7 @@ img3: 'https://imgshopnewgumlet.lbb.in/catalog/product/w/m/wmdfco150_main_wdim.j
                 img3: 'https://imgshopnewgumlet.lbb.in/catalog/product/g/o/goingdesi078.jpg?fm=webp&w=750&h=500&dpr=1',
             },
             
-            quantity: 2,
+            inStock: 2,
             reviews:'3/5'
             },
 
@@ -49,7 +49,7 @@ img3: 'https://imgshopnewgumlet.lbb.in/catalog/product/w/m/wmdfco150_main_wdim.j
                 img2:'https://imgshopnewgumlet.lbb.in/catalog/product/c/o/copy_of_005_2.jpg?fm=webp&w=750&h=500&dpr=1',
                 img3:'https://imgshopnewgumlet.lbb.in/catalog/product/c/o/copy_of_003_5.jpg?fm=webp&w=750&h=500&dpr=1'
                 },
-                quantity: 2,
+                inStock: 3,
                 reviews:'4/5'
                 },
     ]
@@ -61,7 +61,7 @@ img3: 'https://imgshopnewgumlet.lbb.in/catalog/product/w/m/wmdfco150_main_wdim.j
                 
                 <Card style={{width:'18rem'}}>
                     <Card.Header className="text-center">{item.title}</Card.Header>
-                    <Link to={{pathname:`/productDetails/${item.id}`,state:{id:item.id,title:item.title,price:item.price,imageUrl:item.imageUrl,quantity:item.quantity,reviews:item.reviews}}}> <Card.Img className={classes.imgHover} variant="top" src={item.imageUrl.img1} height='350rem'/></Link>
+                    <Link to={{pathname:`/productDetails/${item.id}`,state:{id:item.id,title:item.title,price:item.price,imageUrl:item.imageUrl,inStock:item.inStock,reviews:item.reviews}}}> <Card.Img className={classes.imgHover} variant="top" src={item.imageUrl.img1} height='350rem'/></Link>
                     <Card.Body className="d-flex justify-content-between">
 
                     <Card.Title>Rs. {item.price}</Card.Title>

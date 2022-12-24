@@ -18,7 +18,7 @@ const GardenDecor=()=>{
             img3:'https://imgshopnewgumlet.lbb.in/catalog/product/p/2/p2_2__1.jpg?fm=webp&w=750&h=500&dpr=1'
         },
         
-        quantity: 2,
+        inStock: 2,
         reviews:'5/5'
         },
 
@@ -34,7 +34,7 @@ const GardenDecor=()=>{
             img3:'https://imgshopnewgumlet.lbb.in/catalog/product/c/h/ch20302d-c.jpg?fm=webp&w=750&h=500&dpr=1'
         },
             
-            quantity: 2,
+        inStock: 2,
             reviews:'4/5'
             },
 
@@ -47,7 +47,7 @@ const GardenDecor=()=>{
                     img2:'https://imgshopnewgumlet.lbb.in/catalog/product/2/4/24.1_table_top_planter_-_bamboo.jpg?fm=webp&w=750&h=500&dpr=1',
                     img3:'https://imgshopnewgumlet.lbb.in/catalog/product/2/4/24.2.1_table_top_planter_bamboo.jpg?fm=webp&w=750&h=500&dpr=1'
                 },
-                quantity:5,
+                inStock:5,
                 reviews:'4.5/5'
             }
 
@@ -61,7 +61,7 @@ const GardenDecor=()=>{
         <Card style={{width:'18rem'}}>
             <Card.Header className="text-center">{item.title}</Card.Header>
             
-            <Link to={{pathname:`/productDetails/${item.id}`, state:{id:item.id,title:item.title,price:item.price,imageUrl:item.imageUrl,quantity:item.quantity,reviews:item.reviews}}}> 
+            <Link to={{pathname:`/productDetails/${item.id}`, state:{id:item.id,title:item.title,price:item.price,imageUrl:item.imageUrl,inStock:item.inStock,reviews:item.reviews}}}> 
             <Card.Img className={classes.imgHover} variant="top" src={item.imageUrl.img1} height='350rem'/></Link>
             <Card.Body className="d-flex justify-content-between">
 

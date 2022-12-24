@@ -6,14 +6,26 @@ import CartContext from "../../store/cart-context"
 
 import NavLinks from "./NavLinks"
 import { Button, Navbar } from "react-bootstrap"
+import AuthContext from "../../store/auth-context"
+import { useHistory } from "react-router-dom"
 
 const NavBar=()=>{
 
     const [showCart,setShowCart]=useState(false)
 
+    const authCtx=useContext(AuthContext)
+    const history=useHistory()
+
     const showCartHandler=(TOrF)=>{
 
-        TOrF===false?setShowCart(false):setShowCart(true)
+        if (authCtx.isLoggedIn){
+            TOrF===false?setShowCart(false):setShowCart(true)
+        }
+        else{
+            history.replace('/auth')
+        }
+
+        
         
     }
 

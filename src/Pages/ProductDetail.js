@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Card, Col, Container, Navbar, Row } from "react-bootstrap"
+import { Card,Container, Navbar} from "react-bootstrap"
 import { useLocation } from "react-router-dom"
 import NavLinks from "../Component/NavBar/NavLinks"
 import classes from './ProductDetail.module.css'
@@ -8,7 +8,10 @@ const ProductDetail=()=>{
 
 
     const location=useLocation()
-    const {id,title,price,imageUrl,quantity,reviews}=location.state || {}
+    const {id,title,price,imageUrl,inStock,reviews}=location.state || {}
+
+    console.log('id',id)
+    console.log('stock',inStock)
 
     const [imgShow, setImgShow]=useState(imageUrl.img1)
     
@@ -34,6 +37,7 @@ const ProductDetail=()=>{
                     <Card.Text className='p-2'><h4>Rs. {price}</h4></Card.Text>
 
                     <Card.Text className='p-2'> Reviews - {reviews}</Card.Text>
+                    {(inStock<5) && <Card.Text className='p-2 text-danger'> Only <strong>{inStock}</strong> left in Stock.</Card.Text>}
                 </Card.Body>
                 
                 

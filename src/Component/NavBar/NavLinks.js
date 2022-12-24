@@ -7,6 +7,7 @@ import classes from './NavLinks.module.css'
 const NavLinks=()=>{
     const history=useHistory()
 const authCtx=useContext(AuthContext)
+
     return (
 
         
@@ -19,8 +20,12 @@ const authCtx=useContext(AuthContext)
                 {!authCtx.isLoggedIn && <NavLink activeClassName={classes.active} className={`m-2 text-white text-decoration-none`} to='/auth'><h5>LOGIN</h5></NavLink>}
                 {authCtx.isLoggedIn && <NavLink className={`m-2 text-white text-decoration-none`} to='/store' onClick={()=>{
               localStorage.removeItem('token')
+
+                    let userEmail=authCtx.email
+                    localStorage.removeItem(userEmail)
+
               authCtx.logoutHandle()
-              history.replace('/store')
+              history.replace('/auth')
               }}><h5>LOGOUT</h5></NavLink>}
             </Container>
 

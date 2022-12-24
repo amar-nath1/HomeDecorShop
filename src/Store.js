@@ -10,6 +10,7 @@ import Cart from './Component/Cart/Cart';
 import CartProvider from './store/CartProvider';
 
 import classes from './Store.module.css'
+import { PostCrudProvider } from './store/postcrud-context';
 
 
 
@@ -26,6 +27,7 @@ function Store() {
 
   return (
     <CartProvider>
+      <PostCrudProvider>
     <NavBar></NavBar>
     <div className={classes.tmhHeader}>
     <div className="d-flex flex-row justify-content-center border border-primary mt-4 bg-warning">
@@ -41,7 +43,7 @@ function Store() {
         <Button onClick={showCartHandler} variant='success' size='lg' className='m-4'> Go to your Cart</Button>
         </div>
 
-        
+        </PostCrudProvider>
 
         <Footer></Footer>
      
